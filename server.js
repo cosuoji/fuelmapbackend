@@ -8,6 +8,11 @@ import authRoutes from "./routes/auth.js";
 import stationRoutes from "./routes/station.js";
 import userRoutes from "./routes/user.js";
 import feedbackRoutes from "./routes/feedback.js";
+import adminRoutes from "./routes/admin.js";
+import adminStations from "./routes/adminStations.js";
+
+
+
 
 
 import { apiLimiter } from "./middleware/rateLimiter.js";
@@ -47,6 +52,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/stations", stationRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/feedback", feedbackRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/admin/stations", adminStations);
+
+
 
 
 mongoose.connect(process.env.MONGO_URI)
